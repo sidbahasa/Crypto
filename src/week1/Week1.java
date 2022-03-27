@@ -34,6 +34,9 @@ public class Week1 {
         return Util.xorHexStrings(hexMessage.toString(), Messages.target);
     }
 
+    /**
+     * Decrypts all cyphertexts using the encryption key
+     */
     public void decryptUsingEncryptionKey(){
         String encryptionKey = computeEncryptionKey();
         for (int i=0; i< Messages.ciphertexts.length; i++) {
@@ -58,6 +61,11 @@ public class Week1 {
         }   
     }
 
+    /**
+     * XORs each cyphertext in Messages.cyphertext with the target cyphertext in order
+     * to force as many collisions between the encoded characters of the target
+     * cyphertext with encoded ' ' from Messages.cyphertext.  
+     */
     public void decodeUsingCipherTexts(){
         int cipherLength = Messages.ciphertexts.length;
 

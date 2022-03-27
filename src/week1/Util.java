@@ -138,12 +138,7 @@ public class Util {
         {
             int k = xorHexPair(getHexPairAt(hexString1,n), getHexPairAt(hexString2,n));
             char c = (char)k;
-            if (Util.isValidChar(c)){
-                sb = sb.append(c);
-            }
-            else {
-                sb.append('^');
-            }
+            sb.append(c);
         }
         
         return sb.toString();
