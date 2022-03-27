@@ -13,8 +13,8 @@ public class Week1 {
         Week1 app = new Week1();
         //app.decode("45");
         //app.decode("4f");
-        app.decodeAllCipherTexts();
-        app.decrypt();
+        app.decodeUsingCipherTexts();
+        app.decryptUsingEncryptionKey();
     }
 
     public String computeEncryptionKey(){
@@ -34,7 +34,7 @@ public class Week1 {
         return Util.xorHexStrings(hexMessage.toString(), Messages.target);
     }
 
-    public void decrypt(){
+    public void decryptUsingEncryptionKey(){
         String encryptionKey = computeEncryptionKey();
         for (int i=0; i< Messages.ciphertexts.length; i++) {
             String decryptedHex = Util.xorHexStrings(Messages.ciphertexts[i], encryptionKey);
@@ -58,7 +58,7 @@ public class Week1 {
         }   
     }
 
-    public void decodeAllCipherTexts(){
+    public void decodeUsingCipherTexts(){
         int cipherLength = Messages.ciphertexts.length;
 
         StringBuilder sb = new StringBuilder();
