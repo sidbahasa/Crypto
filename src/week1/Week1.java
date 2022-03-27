@@ -13,7 +13,7 @@ public class Week1 {
         Week1 app = new Week1();
         //app.decode("45");
         //app.decode("4f");
-        app.decode();
+        app.decodeAllCipherTexts();
         app.decrypt();
     }
 
@@ -42,8 +42,9 @@ public class Week1 {
         }
     }
 
-
-    public void decode(String hexPair){
+    /** Use brute force approach to decode a hex value for a char */
+    public void bruteForceDecode(String hexPair){
+        assert(hexPair.length() == 2);
         for (int i=0; i < 128; i++) {
             String keyHex = Integer.toHexString(i);
             if (keyHex.length() < 2) {
@@ -57,7 +58,7 @@ public class Week1 {
         }   
     }
 
-    public void decode(){
+    public void decodeAllCipherTexts(){
         int cipherLength = Messages.ciphertexts.length;
 
         StringBuilder sb = new StringBuilder();
