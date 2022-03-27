@@ -1,3 +1,4 @@
+package week1;
 /**
  *
  * @author sshaw
